@@ -6,21 +6,21 @@ class MainWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("Aleks TO DO")
-        main_layout = QVBoxLayout()
-        list_widget = QListWidget()
-        self.setLayout(main_layout)
-        edit_widget = QLineEdit()
-        edit_widget.setPlaceholderText("à faire..")
-        btn_to_clear = QPushButton("Supprimer")
+        self.main_layout = QVBoxLayout()
+        self.list_widget = QListWidget()
+        self.setLayout(self.main_layout)
+        self.edit_widget = QLineEdit()
+        self.edit_widget.setPlaceholderText("à faire..")
+        self.btn_to_clear = QPushButton("Supprimer")
 
-        main_layout.addWidget(list_widget)
-        main_layout.addWidget(edit_widget)
-        main_layout.addWidget(btn_to_clear)
+        self.main_layout.addWidget(self.list_widget)
+        self.main_layout.addWidget(self.edit_widget)
+        self.main_layout.addWidget(self.btn_to_clear)
 
-        edit_widget.returnPressed.connect(self.add_task)
+        self.edit_widget.returnPressed.connect(self.add_task)
 
     def add_task(self):
-        print("ca va")
+        self.list_widget.addItem(self.edit_widget.text())
 
 
 
