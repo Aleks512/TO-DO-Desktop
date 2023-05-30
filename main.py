@@ -25,8 +25,11 @@ class MainWindow(QWidget):
         self.list_widget.addItem(self.edit_widget.text())
         self.edit_widget.clear()
 
+    # def delete_all_tasks(self, item):
+    #     print(item.text())
+
     def delete_all_tasks(self, item):
-        print(item.text())
+        self.list_widget.takeItem(self.list_widget.row(item))
 
 
 
