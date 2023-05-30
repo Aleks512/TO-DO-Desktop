@@ -19,10 +19,14 @@ class MainWindow(QWidget):
 
         self.edit_widget.returnPressed.connect(self.add_task)
         self.btn_to_clear.clicked.connect(self.list_widget.clear)
+        self.list_widget.itemDoubleClicked.connect(self.delete_all_tasks)
 
     def add_task(self):
         self.list_widget.addItem(self.edit_widget.text())
         self.edit_widget.clear()
+
+    def delete_all_tasks(self):
+        print('double click')
 
 
 
