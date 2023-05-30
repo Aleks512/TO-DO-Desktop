@@ -18,6 +18,7 @@ class MainWindow(QWidget):
         self.main_layout.addWidget(self.btn_to_clear)
 
         self.edit_widget.returnPressed.connect(self.add_task)
+        self.btn_to_clear.clicked.connect(self.list_widget.clear)
 
     def add_task(self):
         self.list_widget.addItem(self.edit_widget.text())
