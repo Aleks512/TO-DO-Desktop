@@ -21,6 +21,7 @@ class MainWindow(QWidget):
 
     def add_task(self):
         self.list_widget.addItem(self.edit_widget.text())
+        self.edit_widget.clear()
 
 
 
